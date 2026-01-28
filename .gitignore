@@ -1,6 +1,20 @@
-# Terraform
+# From the root of your repo
+cat >> .gitignore <<'EOF'
+# --- Terraform ---
+.terraform/
 *.tfstate
 *.tfstate.*
-.terraform/
-*.backup
-*.log
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Lock info (keep .terraform.lock.hcl tracked)
+.terraform.tfstate.lock.info
+EOF
